@@ -1,11 +1,7 @@
 package com.example.lab3_20213704.Entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 @Entity
 @Table(name="oftalmologo")
 public class Oftalmologo {
@@ -18,7 +14,39 @@ public class Oftalmologo {
     @Column(name = "correo")
     private String correo;
     //Consideramos el caso de beans como atributo
-    @ManyToOne
+
     @JoinColumn(name="clinica_id")
-    private Clinica clinica;
+    private int clinica_id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public int getClinica_id() {
+        return clinica_id;
+    }
+
+    public void setClinica_id(int clinica_id) {
+        this.clinica_id = clinica_id;
+    }
 }
